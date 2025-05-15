@@ -39,19 +39,19 @@ const connectDB = async () => {
 
 connectDB();
 
+// Serve static files
+app.use(express.static(path.join(__dirname, '../client/build')));
+
 // API Routes
 app.use('/api/campaigns', campaignRoutes);
 app.use('/api/tracking', trackingRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/ai', aiRoutes);
 
-// Serve static files in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
-  });
-}
+// Serve React app for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
