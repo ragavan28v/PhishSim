@@ -1,0 +1,253 @@
+.campaign-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.campaign-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.campaign-list-header h1 {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.campaign-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.campaign-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.campaign-header h2 {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-active {
+  background: rgba(46, 213, 115, 0.2);
+  color: #2ed573;
+}
+
+.status-completed {
+  background: rgba(255, 159, 67, 0.2);
+  color: #ff9f43;
+}
+
+.status-draft {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.campaign-description {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.campaign-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.campaign-dates {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.date {
+  text-align: center;
+}
+
+.date-label {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.date-value {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.campaign-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 191, 255, 0.1);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text-secondary);
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--glass-border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  animation: spin 1s linear infinite;
+}
+
+.error-message {
+  background: rgba(255, 99, 71, 0.2);
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.campaign-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .campaign-list {
+    padding: 1rem;
+  }
+
+  .campaign-list-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .campaign-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campaign-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .campaign-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .campaign-dates {
+    grid-template-columns: 1fr;
+  }
+} 

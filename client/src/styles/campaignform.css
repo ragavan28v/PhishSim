@@ -1,0 +1,176 @@
+.campaign-form {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.campaign-form h1 {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-section h2 {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.target-group {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.remove-target {
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.add-target {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.error-message {
+  background: rgba(255, 99, 71, 0.2);
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .campaign-form {
+    padding: 1rem;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-section {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Hover Effects */
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--primary);
+}
+
+.target-group:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Add or update styles for the select dropdown */
+select, .form-group select, .form-section select {
+  background: #23272f;
+  color: #fff;
+  border: 1px solid #00bfff;
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+select:focus, .form-group select:focus, .form-section select:focus {
+  outline: none;
+  border-color: #00bfff;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+}
+
+select option, .form-group select option, .form-section select option {
+  background: #23272f;
+  color: #fff;
+} 
